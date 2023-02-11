@@ -10,7 +10,7 @@ function HomePage() {
       </Head>
       <h1> Splache </h1>
       <p>An Agile, Nimble, & Lightweight Solution to GraphQL Caching</p>
-      <Image src = {logo} alt = 'logo' width = {500} height = {500}/>
+      {/* <Image src = {logo} alt = 'logo' width = {500} height = {500}/> */}
     </div>
   )
 }
