@@ -3,3 +3,10 @@
 /out/
 package-lock.json
 .DS_Store
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+next-env.d.ts
