@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "esModuleInterop": true,
+    "noImplicitAny": true, //no using any or guessing implicitly
+    "removeComments": true, //reduces bundle size
+    "sourceMap": true,
+    "preserveConstEnums": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "pages/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "splache-launch",
+  "version": "1.0.0",
+  "description": "Launch Page for the Amazing, Nimble, and Agile Splache App",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oslabs-beta/Splache-Launch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oslabs-beta/Splache-Launch/issues"
+  },
+  "homepage": "https://github.com/oslabs-beta/Splache-Launch#readme",
+  "dependencies": {
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.5"
+  }
+}
