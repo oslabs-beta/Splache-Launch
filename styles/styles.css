@@ -1,5 +1,65 @@
+
+
+html{
+    /* background: linear-gradient(180deg, #95b8d1, #8fb3d1, #8aaed0, #85a9d0, #82a3cf, #7fa8d2, #7eaed4, #7db3d5, #89c3d5, #a0d1d5, #bbded7, #d6eadf 90%); */
+    /* background: linear-gradient(180deg, rgba(128,155,206,1) 0%, rgba(184,224,210,1) 80%, rgba(255,255,255,1) 100%); */
+    background: linear-gradient(180deg, rgba(128,155,206,1) 15%, rgba(184,224,210,1) 80%, rgba(255,255,255,1) 100%);
+    background-repeat: no-repeat;
+    width: auto;
+    height: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 body{
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    background: linear-gradient(to right, #5f2c82, #49a09d);
     color: white;
+    margin-top: 180px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    font-size: 80px;
+    text-shadow: 1px 1px 2px #95b8d1, 0 0 1em #7fa8d2, 0 0 0.2em #bbded7;
+}
+
+p{
+    font-size: 18px;
+}
+
+.clipboard{
+    display: flex;
+    align-self: center;
+    background:#FAFAFA;
+    color: #8aaed0;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    width: 500px;
+    border-radius: 100px;
+    margin-left: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.clipboardButton{
+    border: none;
+    background-color: #FAFAFA;
+}
+.clipboardButton:hover{
+    cursor: pointer;
+}
+
+.teamContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.team{
+    border-radius: 20px;
+    height: 400px;
+    width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
