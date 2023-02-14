@@ -1,26 +1,73 @@
+/* background-image: url('https://media.tenor.com/FnrYIJAcRjoAAAAC/national-beach-day-waves.gif'); */
+html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+}
 
-
-html{
-    /* background: linear-gradient(180deg, #95b8d1, #8fb3d1, #8aaed0, #85a9d0, #82a3cf, #7fa8d2, #7eaed4, #7db3d5, #89c3d5, #a0d1d5, #bbded7, #d6eadf 90%); */
-    /* background: linear-gradient(180deg, rgba(128,155,206,1) 0%, rgba(184,224,210,1) 80%, rgba(255,255,255,1) 100%); */
-    background: linear-gradient(180deg, rgba(128,155,206,1) 15%, rgba(184,224,210,1) 80%, rgba(255,255,255,1) 100%);
+body{
+    background: linear-gradient(180deg, rgba(128,155,206,1) 8%, rgba(184,224,210,1) 20%, rgba(255,255,255,1) 28%);
     background-repeat: no-repeat;
     width: auto;
     height: 100%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-body{
+.parallax{
+    background-image: url('https://media3.giphy.com/media/3oz8xur099boo4N9aU/giphy.gif'); 
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.innerPage{
     display: flex;
     flex-direction: column;
     text-align: center;
     color: white;
-    margin-top: 180px;
+    margin-top: 130px;
     justify-content: center;
     align-items: center;
 }
 
-.logo{
+.pageSection{
+    margin-top: 300px;
+}
+
+#navbar{
+    position: absolute;
+    top: 0; 
+    margin-top: 10px;
+    background-color: none;
+    height: 65px;
+    padding-left: 5vw; 
+    padding-right: 5vw; 
+    display: flex;
+    flex-wrap: wrap; 
+    margin-left: 700px;
+}
+
+li{
+    font-size: 17px;
+    display: inline;
+}
+
+li a{
+    cursor: pointer;
+    padding: 10px; 
+    text-shadow: 1px 1px 2px #95b8d1, 0 0 1em #7fa8d2, 0 0 0.2em #bbded7;
+    color: white;
+}
+
+li a:hover{
+    background-color: #6a87f4;
+    border-radius: 8px;
+}
+
+#logo{
     font-size: 80px;
     text-shadow: 1px 1px 2px #95b8d1, 0 0 1em #7fa8d2, 0 0 0.2em #bbded7;
 }
@@ -29,7 +76,7 @@ p{
     font-size: 18px;
 }
 
-.clipboard{
+#clipboard{
     display: flex;
     align-self: center;
     background:#FAFAFA;
@@ -40,7 +87,6 @@ p{
     justify-content: center;
     width: 500px;
     border-radius: 100px;
-    margin-left: 150px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -52,7 +98,7 @@ p{
     cursor: pointer;
 }
 
-.teamContainer{
+#teamContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
