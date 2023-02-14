@@ -10,7 +10,7 @@ import {FaRegClipboard, FaClipboardCheck, FaGithub} from 'react-icons/fa';
 import React, { useState } from 'react';
 
 
-function HomePage() {
+ function HomePage() {
   const [toggled, setToggled] = useState(false); 
   const clipboardStyle = {fontSize: '20px', color: '#7fa8d2'};
   const copyToClipBoard = (): void => {
@@ -69,4 +69,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default HomePage;
