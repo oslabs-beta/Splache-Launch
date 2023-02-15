@@ -9,6 +9,8 @@ import diagram1 from 'assets/diagram1.png'
 import logomark from 'assets/logomark.png'
 import {FaRegClipboard, FaClipboardCheck, FaGithub} from 'react-icons/fa';
 import React, { useState } from 'react';
+import {Navbar} from './components/Navbar'
+import {Homepage} from './components/Homepage'
 
 
  function HomePage() {
@@ -27,30 +29,14 @@ import React, { useState } from 'react';
       </Head>
       <div className = 'innerPage'>
 
-      <nav id ='navbar'> 
-      <ul>
-        <li><a href = '#homepage'>Home</a></li>
-        <li><a href = '#intro'>The Product</a></li>
-        <li><a href = '#teamContainer'>Meet the Team</a></li>
-        <li><a href = 'https://github.com/oslabs-beta/Splache'><FaGithub style = {{fontSize: '20px'}}/></a></li>
-      </ul>
-      </nav>
+      <Navbar/>
       
-      <section id = 'homepage'>
-
-      <h1 id = 'logo'> <Image src = {logomark} alt = 'logomark' id = 'logomark'/><em>Splache</em></h1>
-      <p> An Agile, Nimble, & Lightweight Solution to GraphQL Caching</p>
-      <div id='clipboard'>
-        <p> npm install splache <button className = 'clipboardButton' 
-        onClick = {() => {copyToClipBoard()}}>{
-          toggled? < FaClipboardCheck style ={clipboardStyle}/> : <FaRegClipboard style = {clipboardStyle}/>}
-          </button></p>
-      </div>
-      <div style = {toggled ? {display: 'block'} : {display: 'none'}}> <p> Successfully copied to clipboard! </p></div>
-      </section>
+      <Homepage/>
       
       <br/>
-
+      <div className='textContainer'>
+        <h5>Introducing Splache (/splæʃ/)</h5>
+      </div>
       <section id = 'textbox'>
         <p id  = 'intro'>
         <b><span style ={{fontSize: '20px'}}>Introducing Splache</span></b> (/splæʃ/), an agile, user-friendly, and lightweight JavaScript library 
