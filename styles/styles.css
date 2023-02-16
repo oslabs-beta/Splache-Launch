@@ -92,12 +92,12 @@ p{
 
 #textbox1{
     margin-top: 500px;
-    color: #95b8d1;
+    color: rgb(81, 136, 170);
     line-height: 2;
     margin: 0 300px;
 }
 #textbox2{
-    color: #95b8d1;
+    color: rgb(81, 136, 170);
     line-height: 2;
     margin: 0 300px;
 }
@@ -145,4 +145,20 @@ p{
     width: 100vw;
 }
 
+.introBox{
+    display: flex;
+    color: rgb(81, 136, 170);
+    line-height: 2;
+    width: 60%;
+    text-justify: inter-word;
+}
+
+.featureBox{
+    display: flex;
+    flex-direction: column;
+    color: rgb(81, 136, 170);
+    line-height: 2;
+    width: 60%;
+    text-justify: inter-word;
+}
 
