@@ -11,6 +11,8 @@ import {FaRegClipboard, FaClipboardCheck, FaGithub} from 'react-icons/fa';
 import React, { useState } from 'react';
 import {Navbar} from './components/Navbar'
 import {Homepage} from './components/Homepage'
+import {Features} from './components/Features'
+import {Intro} from './components/Intro'
 
 
  function HomePage() {
@@ -34,28 +36,13 @@ import {Homepage} from './components/Homepage'
       <Homepage/>
       
       <br/>
-      <div className='textContainer'>
-        <h5>Introducing Splache (/splæʃ/)</h5>
+      <Intro/>
+      
+      <div className='view' id='howItWorks'>
+      <Image src = {diagram1}  style = {{width: '800px', height: '500px'}} alt ='high-level-diagram'/>
       </div>
-      <section id = 'textbox'>
-        <p id  = 'intro'>
-        <b><span style ={{fontSize: '20px'}}>Introducing Splache</span></b> (/splæʃ/), an agile, user-friendly, and lightweight JavaScript library 
-        <br/>that efficiently caches GraphQL queries using the power of Redis. 
-        <br/>The Splache library is designed for improved performance and reduced load on your GraphQL server.
-        <br/>Through leveraging the speed and scalability of Redis, 
-        <br/>Splache is able to provide an efficient and unique solution for caching GraphQL queries! 
-        </p>
-        <Image src = {diagram1}  style = {{width: '800px', height: '500px'}} alt ='high-level-diagram'/>
-      </section>
-
-      <section id = 'textbox'>
-        <h1> Features </h1> 
-        <ol>
-          <li> User friendly: Splache has been designed to be approachable, making it easy to integrate into your existing GraphQL architecture.</li>
-          <br/><li> Light and fast: The library has a simple, intuitive API that reduces overhead, providing a caching solution without unnecessary features.</li>
-          <br/><li> Improved performance: By caching GraphQL queries in Redis, the library helps to reduce the load on your GraphQL server, leading to improved performance for your application.</li>
-        </ol>
-      </section>
+      
+      <Features/>
 
       <section className = 'pageSection'>
         <h1 style = {{color: '#95b8d1'}}> Meet the team</h1>

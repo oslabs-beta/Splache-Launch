@@ -14,17 +14,20 @@ export function Homepage () {
   }
   
     return (
-        <section id = 'homepage'>
+        <div className='view' style={{height: '60vh'}} id = 'homepage'>
+        <section>
 
         <h1 id = 'logo'> <Image src = {logomark} alt = 'logomark' id = 'logomark'/><em>Splache</em></h1>
         <p> An Agile, Nimble, & Lightweight Solution to GraphQL Caching</p>
         <div id='clipboard'>
-          <p> npm install splache <button className = 'clipboardButton' 
-          onClick = {() => {copyToClipBoard()}}>{
+        <p> npm install splache <button className = 'clipboardButton' 
+        onClick = {() => {copyToClipBoard()}}>{
             toggled? < FaClipboardCheck style ={clipboardStyle}/> : <FaRegClipboard style = {clipboardStyle}/>}
             </button></p>
         </div>
         <div style = {toggled ? {display: 'block'} : {display: 'none'}}> <p> Successfully copied to clipboard! </p></div>
         </section>
+        </div>
+        
     )
 }

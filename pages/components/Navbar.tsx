@@ -5,6 +5,8 @@ export function Navbar () {
       <ul>
         <li><a href = '#homepage'>Home</a></li>
         <li><a href = '#intro'>The Product</a></li>
+        <li><a href = '#howItWorks'>How it Works</a></li>
+        <li><a href = '#features'>Features</a></li>
         <li><a href = '#teamContainer'>Meet the Team</a></li>
         <li><a href = 'https://github.com/oslabs-beta/Splache'><FaGithub style = {{fontSize: '20px'}}/></a></li>
       </ul>
