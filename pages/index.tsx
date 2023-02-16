@@ -8,11 +8,13 @@ import Nancy from 'assets/Nancy.png'
 import diagram1 from 'assets/diagram1.png'
 import logomark from 'assets/logomark.png'
 import {FaRegClipboard, FaClipboardCheck, FaGithub} from 'react-icons/fa';
+import {IoLogoLinkedin} from 'react-icons/io'
 import React, { useState } from 'react';
 import {Navbar} from './components/Navbar'
 import {Homepage} from './components/Homepage'
 import {Features} from './components/Features'
 import {Intro} from './components/Intro'
+import {FlipCard} from './components/FlipCard'
 
 
  function HomePage() {
@@ -23,7 +25,18 @@ import {Intro} from './components/Intro'
     setToggled(true);
     setTimeout(() => {setToggled(false)}, 2000) 
   }
-
+  const gitHubLinks = {
+    Jess : 'https://github.com/jesswang-dev',
+    NicC : 'https://github.com/nhcathcart',
+    Nancy : 'https://github.com/zhangn356',
+    NicJ: 'https://github.com/NicJax'
+  }
+  const linkedinLinks = {
+    Jess : 'https://github.com/jesswang-dev',
+    NicC : 'He\'s mysterious',
+    Nancy : 'https://www.linkedin.com/in/zhangn356',
+    NicJ: 'www.linkedin.com/in/NicJax' 
+  }
   return (
     <div>
       <Head>
@@ -47,10 +60,10 @@ import {Intro} from './components/Intro'
       <section className = 'pageSection'>
         <h1 style = {{color: '#95b8d1'}}> Meet the team</h1>
         <div id = 'teamContainer'> 
-          <Image className = 'team' src = {Jess} alt = 'Jess'/> 
-          <Image className = 'team' src = {Nancy} alt = 'Nancy'/>
-          <Image className = 'team' src = {NicC} alt = 'NicC'/>
-          <Image className = 'team' src = {NicJ} alt = 'NicJ'/>
+        <FlipCard  img={Jess} name={'Jessica Wang'} getGitLink={gitHubLinks.Jess} getLinkedLink ={linkedinLinks.Jess}/>
+        <FlipCard  img={Nancy} name={'Nancy Zhang'} getGitLink={gitHubLinks.Nancy} getLinkedLink ={linkedinLinks.Nancy}/>
+        <FlipCard  img={NicC} name={'Nicholas Cathcart'} getGitLink={gitHubLinks.NicC} getLinkedLink ={linkedinLinks.NicC}/>
+         <FlipCard img = {NicJ} name = {'Nicolas Jackson'} getGitLink={gitHubLinks.NicC} getLinkedLink ={linkedinLinks.NicC}/>
         </div>
       </section>
 

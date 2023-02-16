@@ -54,12 +54,11 @@ body{
     margin-bottom: 100px;
 }
 
-li{
+nav{
     font-size: 17px;
-    display: inline;
 }
 
-li a{
+nav a{
     cursor: pointer;
     padding: 10px; 
     text-shadow: 1px 1px 2px #95b8d1, 0 0 1em #7fa8d2, 0 0 0.2em #bbded7;
@@ -67,7 +66,7 @@ li a{
     text-decoration: none;
 }
 
-li a:hover{
+nav a:hover{
     background-color: #6a87f4;
     border-radius: 8px;
 }
@@ -86,9 +85,6 @@ p{
     font-size: 18px;
 }
 
-#intro{
-    
-}
 
 #textbox1{
     margin-top: 500px;
@@ -126,6 +122,7 @@ p{
 
 #teamContainer{
     display: grid;
+    grid-gap: 2%;
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -162,3 +159,55 @@ p{
     text-justify: inter-word;
 }
 
+.flipCard {
+    background-color: transparent;
+    border-radius: 50px;
+    height: 20vw;
+    width: 20vw;
+    perspective: 1000px; /*Remove this if you don't want the 3D effect*/
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flipCardInner {
+    position: relative;
+    border-radius: 20px;
+    height: 20vw;
+    width: 20vw;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flipCard:hover .flipCardInner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flipCardFront, .flipCardBack {
+    position: absolute;
+    border-radius: 20px;
+    height: 20vw;
+    width: 20vw;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flipCardFront {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flipCardBack {
+    background-color: rgb(120, 147, 197);
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .links{
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+  }
