@@ -40,15 +40,17 @@ body{
 
 #navbar{
     position: fixed;
+    justify-self: flex-end;
     top: 0; 
-    margin-top: 10px;
+    margin-top: 1vh;
     background-color: none;
-    height: 65px;
+    height: 10vh;
     padding-left: 5vw; 
     padding-right: 5vw; 
     display: flex;
+    justify-content: flex-end;
     flex-wrap: wrap; 
-    margin-left: 700px;
+    margin-right: 1vw;
     margin-bottom: 100px;
 }
 
@@ -85,11 +87,17 @@ p{
 }
 
 #intro{
-    margin-top: 400px;
+    
 }
 
-#textbox{
-    color: #95b8d1;
+#textbox1{
+    margin-top: 500px;
+    color: rgb(81, 136, 170);
+    line-height: 2;
+    margin: 0 300px;
+}
+#textbox2{
+    color: rgb(81, 136, 170);
     line-height: 2;
     margin: 0 300px;
 }
@@ -123,7 +131,34 @@ p{
 
 .team{
     border-radius: 20px;
-    height: 400px;
-    width: 400px;
+    height: 20vw;
+    width: 20vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.introBox{
+    display: flex;
+    color: rgb(81, 136, 170);
+    line-height: 2;
+    width: 60%;
+    text-justify: inter-word;
+}
+
+.featureBox{
+    display: flex;
+    flex-direction: column;
+    color: rgb(81, 136, 170);
+    line-height: 2;
+    width: 60%;
+    text-justify: inter-word;
+}
+
