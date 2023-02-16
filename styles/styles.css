@@ -1,5 +1,5 @@
 /* background-image: url('https://media.tenor.com/FnrYIJAcRjoAAAAC/national-beach-day-waves.gif'); */
-html, body{
+body{
     max-width: 100%;
     overflow-x: hidden;
     overscroll-behavior: none;
