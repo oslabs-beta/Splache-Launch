@@ -3,6 +3,7 @@ import { RedisClientType } from '@redis/client';
 import {graphql, GraphQLSchema} from 'graphql'
 import {Request, Response, NextFunction} from 'express'
 
+
 export class SplacheCacheWhole {
 
     schema: GraphQLSchema
@@ -43,3 +44,4 @@ export class SplacheCacheWhole {
         }
     }
 }
+

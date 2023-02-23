@@ -22,9 +22,7 @@ export function Sandbox(){
             headers: {
                 'Content-Type' : 'application/json'
             },
-            body: JSON.stringify({
-                query: queryString
-            })
+            body: JSON.stringify(queryString)
         })
         .then((res) => res.json())
         .then((result) => setQueryResponse(result))

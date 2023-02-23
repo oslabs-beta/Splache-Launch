@@ -1,8 +1,9 @@
-const {graphql, GraphQLSchema} = require('graphql');
-import {SplacheCacheWhole} from './CacheWhole';
 
-// const SplacheCacheWhole = require('./CacheWhole')
-const express = require('express');
+
+// const CacheWhole = require('./CacheWhole.ts')
+// const express = require('express');
+import {SplacheCacheWhole} from './CacheWhole'
+import express from 'express'
 const app = express(); 
 const PORT = 4001; 
 const schema = require ('./schema.ts'); 
