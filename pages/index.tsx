@@ -15,7 +15,7 @@ import {Homepage} from './components/Homepage'
 import {Features} from './components/Features'
 import {Intro} from './components/Intro'
 import {FlipCard} from './components/FlipCard'
-
+import {Sandbox} from './components/Sandbox'
 
  function HomePage() {
   const [toggled, setToggled] = useState(false); 
@@ -55,6 +55,8 @@ import {FlipCard} from './components/FlipCard'
       <Image src = {diagram1}  style = {{width: '800px', height: '500px'}} alt ='high-level-diagram'/>
       </div>
       
+      <Sandbox/>
+
       <Features/>
 
       <section className = 'pageSection'>
