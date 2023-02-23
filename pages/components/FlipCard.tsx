@@ -13,9 +13,9 @@ export function FlipCard(props){
     <div className = 'flipCardBack'>
         <h2> {props.name} </h2>
         <h3> Links </h3>
-        <a href = {props.getGitLink} className = 'links'> <FaGithub/></a>
+        <a href = {props.getGitLink} className = 'links'> <FaGithub className = 'icons'/></a>
         <br/>
-        <a href = {props.getLinkedLink} className = 'links'> <IoLogoLinkedin/></a>
+        <a href = {props.getLinkedLink} className = 'links'> <IoLogoLinkedin className ='icons'/></a>
     </div>
   </div>
 </div>

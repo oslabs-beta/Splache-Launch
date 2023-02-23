@@ -214,3 +214,8 @@ p{
     color: white;
     cursor: pointer;
   }
+
+  .icons:hover{
+    box-shadow: 1px 1px 2px #95b8d1, 0 0 1em #7fa8d2, 0 0 0.2em #bbded7;
+    border-radius: 5px;
+  }
