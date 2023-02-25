@@ -15,6 +15,7 @@ import {Homepage} from './components/Homepage'
 import {Features} from './components/Features'
 import {Intro} from './components/Intro'
 import {FlipCard} from './components/FlipCard'
+import {Sandbox} from './components/Sandbox'
 import {DropDown} from './components/DropDown'
 
 
@@ -55,6 +56,8 @@ import {DropDown} from './components/DropDown'
       <Image className = 'diagram' src = {diagram1} alt ='high-level-diagram'/>
       </div>
       
+      <Sandbox/>
+
       <Features/>
 
       <section className = 'pageSection'>

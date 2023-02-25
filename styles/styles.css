@@ -293,3 +293,9 @@ p{
     color: rgb(81, 136, 170); 
 }
 
+
+
+  .sandbox{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
