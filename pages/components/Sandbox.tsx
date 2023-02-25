@@ -17,7 +17,12 @@ export function Sandbox(){
       }`;
       const [queryString, setQueryString] = useState(sampleQuery); 
       const [queryResponse, setQueryResponse] = useState('');
+      const [start, setStart] = useState(0);
+      const [time, setTimer] = useState(0);
 
+      // const timer = setInterval(() => setTimer(time += 1), 1);
+      // let start: number = 0; 
+      // let end: number = 0;
       useEffect(() => {
 
       })
@@ -32,6 +37,8 @@ export function Sandbox(){
         })
         .then((res) => res.json())
         .then((result) => {
+          // clearInterval(timer);
+        setTimer(Date.now());
         setQueryResponse(JSON.stringify(result.data.person))})
       }
       const queryOptions = 
@@ -51,10 +58,13 @@ export function Sandbox(){
             <textarea style = {{height:'300px', width:'300px'}} defaultValue={sampleQuery} 
             onChange = {(event) => {
               setQueryString(event.target.value)}}/>
-            <button onClick = {() => {query(queryString)}}> Send Your Query </button>
+            <button onClick = {() => {
+              setStart(Date.now()) 
+              query(queryString)
+              }}> Send Your Query </button>
         </div>
         <div>
-            <h3>Timer:</h3>
+            <h3>Timer: {time > 0 ? <p>{time - start}</p> : <p>Loading .... </p> }</h3>
             <h3>Response: <p>{queryResponse}</p></h3>
         </div>
         </div>
