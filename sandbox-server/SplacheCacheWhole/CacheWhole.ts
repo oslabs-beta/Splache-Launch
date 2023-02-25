@@ -19,7 +19,6 @@ export class SplacheCacheWhole {
     }
 
     async wholeCache (req: Request, res: Response, next: NextFunction) {
-        console.log('in wholeCache req', req.body)
         const queryString : string = req.body.query;
         const isInCache = await this.client.EXISTS(queryString);
         if (isInCache){
