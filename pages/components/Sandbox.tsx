@@ -15,17 +15,20 @@ export function Sandbox(){
           gender
         }
       }`;
+
       const [queryResponse, setQueryResponse] = useState('');
       const query = (queryString: string) => {
-        fetch('http://localhost:4001/graphql', {
+         fetch('http://localhost:4001/graphql', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'
             },
-            body: JSON.stringify(queryString)
+            body: JSON.stringify({query: sampleQuery})
         })
         .then((res) => res.json())
-        .then((result) => setQueryResponse(result))
+        .then((result) => {
+          console.log("in fetch after resolve, result", result)
+        setQueryResponse(result)})
       }
     return(
         <section style = {{color:'black'}} className = 'pageSection'>
