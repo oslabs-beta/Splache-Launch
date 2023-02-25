@@ -16,6 +16,8 @@ import {Features} from './components/Features'
 import {Intro} from './components/Intro'
 import {FlipCard} from './components/FlipCard'
 import {Sandbox} from './components/Sandbox'
+import {DropDown} from './components/DropDown'
+
 
  function HomePage() {
   const [toggled, setToggled] = useState(false); 
@@ -43,16 +45,15 @@ import {Sandbox} from './components/Sandbox'
         <title>Splache</title>
       </Head>
       <div className = 'innerPage'>
-
+      <DropDown/>
       <Navbar/>
-      
       <Homepage/>
       
       <br/>
       <Intro/>
       
       <div className='view' id='howItWorks'>
-      <Image src = {diagram1}  style = {{width: '800px', height: '500px'}} alt ='high-level-diagram'/>
+      <Image className = 'diagram' src = {diagram1} alt ='high-level-diagram'/>
       </div>
       
       <Sandbox/>

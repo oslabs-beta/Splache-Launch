@@ -1,4 +1,3 @@
-/* background-image: url('https://media.tenor.com/FnrYIJAcRjoAAAAC/national-beach-day-waves.gif'); */
 html{
     scroll-behavior: smooth;
 }
@@ -10,7 +9,6 @@ body{
 }
 
 body{
-    /* original color: rgb(120, 147, 197) */
     background: linear-gradient(180deg, rgb(81, 136, 170) 8%, rgb(188, 230, 215) 20%, rgba(255,255,255,1) 28%);
     background-repeat: no-repeat;
     width: auto;
@@ -18,14 +16,14 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.parallax{
+/* .parallax{
     background-image: url('https://media3.giphy.com/media/3oz8xur099boo4N9aU/giphy.gif'); 
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-}
+} */
 
 .innerPage{
     display: flex;
@@ -72,6 +70,22 @@ nav a{
 nav a:hover{
     background-color: #6a87f4;
     border-radius: 8px;
+}
+
+#dropdownMenu{
+    position: fixed; 
+    top: 0; 
+    align-items: right; 
+}
+
+#dropdown{
+    margin-top: 10px; 
+    width: 200px;
+    height: 40px;
+    border-radius: 20px; 
+    border: none; 
+    box-shadow: 1px 1px 2px #95b8d1, 0 0 1em #7fa8d2, 0 0 0.2em #bbded7; 
+    color: rgb(81, 136, 170);
 }
 
 #logo{
@@ -219,6 +233,67 @@ p{
     box-shadow: 1px 1px 2px #95b8d1, 0 0 1em #7fa8d2, 0 0 0.2em #bbded7;
     border-radius: 5px;
   }
+
+.diagram{
+    width: 700px;
+    height: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+        margin: 50px; 
+        max-width: 600px; 
+    }
+    .diagram{
+        width: 320px;
+        height: 300px;
+    }
+  
+    #navbar{
+        flex-wrap: wrap;
+    }
+    #logoSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px; 
+    }
+    #logo{
+        font-size: 60px;
+    }
+    #clipboard{
+        width: 300px
+    }
+    #teamContainer, .flipCard{
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center; 
+        align-self: center;
+        margin: 70px; 
+    }
+    .flipCardFront, .team, .flipCardBack, .flipCardInner{
+        width: 200px;
+        height: 200px;
+    }
+    #navbar{
+        display:none;  
+    }
+    #intro{
+        margin-top: 200px
+    }
+    #introText{
+        font-size: 14px;
+    }
+}
+
+#splache{
+    font-size: 24px;
+    color: rgb(81, 136, 170); 
+}
+
+
 
   .sandbox{
     display: grid;
