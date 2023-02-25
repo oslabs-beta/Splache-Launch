@@ -15,7 +15,7 @@ export function Homepage () {
   
     return (
         <div className='view' style={{height: '60vh'}} id = 'homepage'>
-        <section>
+        <section id = 'logoSection'>
 
         <h1 id = 'logo'> <Image src = {logomark} alt = 'logomark' id = 'logomark'/><em>Splache</em></h1>
         <p> An Agile, Nimble, & Lightweight Solution to GraphQL Caching</p>

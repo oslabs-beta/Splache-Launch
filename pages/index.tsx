@@ -15,6 +15,7 @@ import {Homepage} from './components/Homepage'
 import {Features} from './components/Features'
 import {Intro} from './components/Intro'
 import {FlipCard} from './components/FlipCard'
+import {DropDown} from './components/DropDown'
 
 
  function HomePage() {
@@ -43,16 +44,15 @@ import {FlipCard} from './components/FlipCard'
         <title>Splache</title>
       </Head>
       <div className = 'innerPage'>
-
+      <DropDown/>
       <Navbar/>
-      
       <Homepage/>
       
       <br/>
       <Intro/>
       
       <div className='view' id='howItWorks'>
-      <Image src = {diagram1}  style = {{width: '800px', height: '500px'}} alt ='high-level-diagram'/>
+      <Image className = 'diagram' src = {diagram1} alt ='high-level-diagram'/>
       </div>
       
       <Features/>
