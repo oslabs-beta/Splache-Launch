@@ -73,6 +73,7 @@ nav a:hover{
 }
 
 #dropdownMenu{
+    display: none;
     position: fixed; 
     top: 0; 
     align-items: right; 

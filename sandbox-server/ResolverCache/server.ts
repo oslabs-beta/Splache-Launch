@@ -1,20 +1,22 @@
-const {graphql, GraphQLSchema} = require('graphql');
-const express = require('express');
-import { ResolverCache } from "./ResolverCache";
-import {StarWarsSchema} from "./ResolverCacheSchema";
-const PORT = 4000;
+import {graphql} from 'graphql';
+import cors from 'cors'
+import express from 'express';
+import {schema} from './schema';
 
-const app = express();
-app.use = express.json();
+const app = express(); 
 
+app.use(express.json())
+app.use(cors())
+
+const PORT = 4002;
 
 app.use('/graphql', (req, res) => {
-    graphql({ schema: StarWarsSchema, source: req.body.query})
-      .then((response) => {
-        res.send(response)
-      })
-  })
+  graphql({ schema: schema, source: req.body.query})
+    .then((response) => {
+      res.send(response)
+    })
+})
 
-app.listen(PORT,() => {console.log(`listening on port ${PORT}`)})
-
-
+app.listen(PORT, () => {
+    console.log(`listening on ${PORT}`)
+})
