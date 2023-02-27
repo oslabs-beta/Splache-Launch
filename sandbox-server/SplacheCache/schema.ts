@@ -70,12 +70,8 @@ async function getPerson(id: any) {
     return data;
 }
 
-module.exports = new GraphQLSchema({
+export const schema = new GraphQLSchema({
     query: RootQuery
 })
 
-export{}
-
-
-
-
+export {}

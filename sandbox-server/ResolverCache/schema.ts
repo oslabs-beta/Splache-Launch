@@ -63,3 +63,5 @@ async function getPerson(args:{id:number}) {
 export const schema = new GraphQLSchema({
     query: RootQuery
 })
+
+export {}
