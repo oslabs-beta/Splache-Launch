@@ -4,7 +4,7 @@ import {SplacheCacheWhole} from './CacheWhole'
 import express from 'express'
 import cors from 'cors'
 const app = express(); 
-const PORT = 4001; 
+const PORT = 4003; 
 const schema = require ('./schema.ts'); 
 
 const cache = new SplacheCacheWhole(schema);

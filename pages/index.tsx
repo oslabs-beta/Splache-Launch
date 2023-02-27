@@ -52,10 +52,6 @@ import {DropDown} from './components/DropDown'
       <br/>
       <Intro/>
       
-      <div className='view' id='howItWorks'>
-      <Image className = 'diagram' src = {diagram1} alt ='high-level-diagram'/>
-      </div>
-      
       <Sandbox/>
 
       <Features/>

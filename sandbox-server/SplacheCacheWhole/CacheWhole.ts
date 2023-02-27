@@ -25,7 +25,6 @@ export class SplacheCacheWhole {
             const returnObj = await this.client.GET(queryString);
             if (typeof returnObj === 'string'){
                 const returnObjParsed = JSON.parse(returnObj);
-                console.log('in wholeCache, returned from cache')
                 res.locals.queryResult = returnObjParsed;
                 return next(); 
             }

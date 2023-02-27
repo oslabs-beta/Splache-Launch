@@ -1,23 +1,9 @@
-const graphql = require('graphql');
-//used to convert the JS data types and custom data types into GraphQL-friendly types for compilation
-const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLNonNull } = graphql;
+import {ResolverCache} from './ResolverCache'
+const cache = new ResolverCache()
+import { graphql, GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLNonNull } from  'graphql';
 
-//two versions of demo app - one uses splacheCache and cacheWhole
 
-//type Person {
-//     id: ID!
-//     name: String!
-//     height: Int
-//     mass: Int
-//     hair_color: String
-//     skin_color: String
-//     eye_color: String
-//     birth_year: String
-//     gender: String
-// }
-
-//Root Query: the type that represents all the possible entry points into the GraphQL API
-const Person = new graphql.GraphQLObjectType({
+const Person = new GraphQLObjectType({
     name: 'Person',
     fields: () => ({
         name: {
@@ -58,24 +44,24 @@ const RootQuery = new GraphQLObjectType({
                     type: new GraphQLNonNull(GraphQLString)
                 }
             },
-            resolve: (_source: any, {id}: any) => getPerson(id)
+            resolve:  ((parent, args, context, info) => cache.checkCache(parent, args, context, info, getPerson))
         }
     })
 });
 
-//function getPerson that fetches from SWAPI 
-async function getPerson(id: any) {
+//functions getPerson and getPlanet that fetches from SWAPI 
+async function getPerson(args:{id:number}) {
+    const {id} = args;
+    console.log(id);
     const response = await fetch(`https://swapi.dev/api/people/${id}`);
     const data = await response.json();
     return data;
 }
 
-module.exports = new GraphQLSchema({
+
+
+export const schema = new GraphQLSchema({
     query: RootQuery
 })
 
-export{}
-
-
-
-
+export {}

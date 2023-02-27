@@ -12,7 +12,8 @@ export class ResolverCache {
     }
 
     async checkCache (parent: any, args: {id: number}, context: any, info: {returnType: any}, callback:any){
-        const key = String(info.returnType) + String(args.id); //set the key equal to the fieldName concatenated with the argValString
+        const key = String(info.returnType) + String(args.id); 
+        //set the key equal to the fieldName concatenated with the argValString
         const isInCache = await this.client.EXISTS(key)
         if (isInCache){
             const returnObj = await this.client.GET(key);
@@ -22,7 +23,8 @@ export class ResolverCache {
                 return returnObjParsed
             } 
         }else{
-            const returnObj = callback(args)
+            const returnObj = await callback(args)
+            console.log('inside CheckCache', returnObj)
             await this.client.SET(key, JSON.stringify(returnObj));
             return returnObj
         }
