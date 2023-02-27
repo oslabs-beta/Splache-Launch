@@ -132,8 +132,10 @@ export default function Sandbox(){
         </div>
 
         <div id = 'sandboxResponse'>
-            <p>Timer: {time > 0 ? <p>{time - start} ms </p> : <p>Loading .... </p> }</p>
-            <p id ='queryRes'>Response: <p>{responseFormatter(queryResponse)}</p></p>
+
+            <div>Timer: {time > 0 ? <p>{time - start} ms </p> : <p>Loading .... </p> }</div>
+
+            <div id ='queryRes'>Response:<p>{responseFormatter(queryResponse)}</p></div>
         </div>
 
         </div>

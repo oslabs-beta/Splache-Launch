@@ -24,11 +24,11 @@ export default function Features () {
           </div>
 
           <div className = 'featureInd'>
-           
           <h3> Improved Performance </h3>
           <GrGraphQl className = 'icon'/>
           <p> By caching GraphQL queries in Redis, the library helps to reduce the load on your GraphQL server, leading to improved performance for your application.</p>
           </div>
+
       </section>
     </div>
     </div>
