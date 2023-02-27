@@ -1,4 +1,4 @@
-export function Intro () {
+export default function Intro () {
     return (
         <div className='view' id='intro'>
             <div className='introBox'>

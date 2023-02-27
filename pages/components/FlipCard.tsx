@@ -2,7 +2,7 @@ import Image, { StaticImageData } from 'next/image'
 import { FaGithub } from 'react-icons/fa'
 import {IoLogoLinkedin} from 'react-icons/io'
 
-export function FlipCard(props: {img: StaticImageData, getGitLink: string, getLinkedLink: string, name: string}){
+export default function FlipCard(props: {img: StaticImageData, getGitLink: string, getLinkedLink: string, name: string}){
     return(
 <div className = 'flipCard'>
   <div className = 'flipCardInner'>

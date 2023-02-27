@@ -10,13 +10,13 @@ import logomark from 'assets/logomark.png'
 import {FaRegClipboard, FaClipboardCheck, FaGithub} from 'react-icons/fa';
 import {IoLogoLinkedin} from 'react-icons/io'
 import React, { useState } from 'react';
-import {Navbar} from './components/Navbar'
-import {Homepage} from './components/Homepage'
-import {Features} from './components/Features'
-import {Intro} from './components/Intro'
-import {FlipCard} from './components/FlipCard'
-import {Sandbox} from './components/Sandbox'
-import {DropDown} from './components/DropDown'
+import Navbar from './components/Navbar'
+import Homepage from './components/Homepage'
+import Features from './components/Features'
+import Intro from './components/Intro'
+import FlipCard from './components/FlipCard'
+import Sandbox from './components/Sandbox'
+import DropDown from './components/DropDown'
 
 
  function HomePage() {

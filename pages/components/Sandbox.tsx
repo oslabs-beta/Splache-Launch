@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 
-export function Sandbox(){
+export default function Sandbox(){
     const sampleQuery: string = 
     `
      {

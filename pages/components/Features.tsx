@@ -1,4 +1,4 @@
-export function Features () {
+export default function Features () {
     return (
     <div className='view' id='features'>
       <div className="featureBox">

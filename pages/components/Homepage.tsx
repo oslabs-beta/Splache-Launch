@@ -3,7 +3,7 @@ import Image from 'next/image'
 import logomark from 'assets/logomark.png'
 import {useState} from 'react'
 
-export function Homepage () {
+export default function Homepage () {
 
     const [toggled, setToggled] = useState(false); 
     const clipboardStyle = {fontSize: '20px', color: '#7fa8d2'};

@@ -1,5 +1,5 @@
 import {FaGithub} from 'react-icons/fa'
-export function Navbar () {
+export default function Navbar () {
     return (
     <nav id ='navbar'> 
         <p className='nav'><a href = '#homepage'>Home</a></p>
