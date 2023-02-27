@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 
 export default function Sandbox(){
+
     const sampleQuery: string = 
     `
      {
@@ -15,28 +16,31 @@ export default function Sandbox(){
           gender
         }
       }`;
+
       const [func, setFunc] = useState('wholeCache')
       const [queryString, setQueryString] = useState(sampleQuery); 
       const [queryResponse, setQueryResponse] = useState('');
       const [start, setStart] = useState(0);
       const [time, setTimer] = useState(0);
+      const [button1CSS, setbutton1CSS] = useState('sandBoxButton');
+      const [button2CSS, setbutton2CSS] = useState('sandBoxButton');
+      const [button3CSS, setbutton3CSS] = useState('sandBoxButton')
 
       const wholeCache = (queryString: string) => {
-         fetch('http://localhost:4001/graphql', {
+         fetch('http://localhost:4002/graphql/cacheWhole', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'
             },
             body: JSON.stringify({query: queryString})
-        })
-        .then((res) => res.json())
+        }).then((res) => res.json())
         .then((result) => {
         setTimer(Date.now());
         setQueryResponse(JSON.stringify(result.data.person))})
       }
 
       const resolverCache = (queryString: string) => {
-        fetch('http://localhost:4002/graphql', {
+        fetch('http://localhost:4002/graphql/resolver', {
           method: 'POST',
           headers: {
               'Content-Type' : 'application/json'
@@ -50,7 +54,7 @@ export default function Sandbox(){
       }
 
       const splacheCache = (queryString: string) => {
-        fetch('http://localhost:4003/graphql', {
+        fetch('http://localhost:4002/graphql/SplacheCache', {
           method: 'POST',
           headers: {
               'Content-Type' : 'application/json'
@@ -60,7 +64,16 @@ export default function Sandbox(){
       .then((res) => res.json())
       .then((result) => {
       setTimer(Date.now());
-      setQueryResponse(JSON.stringify(result.data.person))})
+      setQueryResponse(JSON.stringify(result))})
+      }
+
+      const responseFormatter = (response: string): string => {
+        let formattedRes: string = '';
+        for (const char of response){
+          if (char === ',') formattedRes += '\n';
+          else formattedRes += char;
+        }
+        return formattedRes;
       }
 
       const queryOptions = 
@@ -68,19 +81,28 @@ export default function Sandbox(){
 
       return(
         <section  className = 'pageSection' id = 'sandboxStart'>
-        <h1 > Sandbox </h1>
-        <h2> Demo our library pre-installation </h2>
+        <h1 > Sandbox: <em>Demo our library pre-installation</em></h1>
 
-        <nav>
+        <nav id = 'sandboxNav'>
 
-        <button onClick = {() => {
+        <button className = {button1CSS} onClick = {() => {
+          setbutton1CSS('clickedButton')
+          setbutton2CSS('sandBoxButton')
+          setbutton3CSS('sandBoxButton')
           setFunc('wholeCache')
         }}> Caching of Whole Queries </button>
 
-        <button onClick = {() => {
+        <button className = {button2CSS} onClick = {() => {
+          setbutton2CSS('clickedButton')
+          setbutton1CSS('sandBoxButton')
+          setbutton3CSS('sandBoxButton')
           setFunc('resolverCache')
         }}> Caching Results of Resolvers </button>
-        <button onClick = {() => {
+
+        <button className = {button3CSS} onClick = {() => {
+          setbutton3CSS('clickedButton')
+          setbutton1CSS('sandBoxButton')
+          setbutton2CSS('sandBoxButton')
           setFunc('splacheCache')
         }}> Query String Normalization </button>
 
@@ -91,23 +113,27 @@ export default function Sandbox(){
         <div id = 'queryEntry'>
              <p> Enter your GraphQL query here. Our Sandbox supports the querying of the 
               following information about a person with a numeric integer id from 1 to 83: </p>
+             
               <ul> 
                 {queryOptions.map((option) => (<li key = {option} >{option}</li>))}
               </ul>
-            <textarea style = {{height:'300px', width:'300px'}} defaultValue={sampleQuery} 
+
+            <textarea id = 'textarea' defaultValue={sampleQuery} 
             onChange = {(event) => {
               setQueryString(event.target.value)}}/>
-            <button onClick = {() => {
+              <br/>
+            <button className = 'clickedButton' onClick = {() => {
               setStart(Date.now()) 
               if (func === 'wholeCache') wholeCache(queryString); 
               if (func === 'resolverCache') resolverCache(queryString);
-              if (func === 'splacheCache') splacheCache(queryString); 
+              if (func === 'splacheCache') splacheCache(queryString);
               }}> Send Your Query </button>
+
         </div>
 
         <div id = 'sandboxResponse'>
-            <h3>Timer: {time > 0 ? <p>{time - start} ms </p> : <p>Loading .... </p> }</h3>
-            <h3>Response: <p>{queryResponse}</p></h3>
+            <p>Timer: {time > 0 ? <p>{time - start} ms </p> : <p>Loading .... </p> }</p>
+            <p id ='queryRes'>Response: <p>{responseFormatter(queryResponse)}</p></p>
         </div>
 
         </div>

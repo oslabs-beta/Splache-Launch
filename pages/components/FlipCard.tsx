@@ -2,10 +2,13 @@ import Image, { StaticImageData } from 'next/image'
 import { FaGithub } from 'react-icons/fa'
 import {IoLogoLinkedin} from 'react-icons/io'
 
+
 export default function FlipCard(props: {img: StaticImageData, getGitLink: string, getLinkedLink: string, name: string}){
     return(
 <div className = 'flipCard'>
+
   <div className = 'flipCardInner'>
+
     <div className = 'flipCardFront'>
     <Image className = 'team' src = {props.img} alt = {`${props.img}`}/> 
     </div>
@@ -17,7 +20,10 @@ export default function FlipCard(props: {img: StaticImageData, getGitLink: strin
         <br/>
         <a href = {props.getLinkedLink} className = 'links'> <IoLogoLinkedin className ='icons'/></a>
     </div>
+
   </div>
+
 </div>
+
     )
 }

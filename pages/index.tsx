@@ -48,12 +48,8 @@ import DropDown from './components/DropDown'
       <DropDown/>
       <Navbar/>
       <Homepage/>
-      
-      <br/>
       <Intro/>
-      
       <Sandbox/>
-
       <Features/>
 
       <section className = 'pageSection'>
@@ -65,8 +61,8 @@ import DropDown from './components/DropDown'
          <FlipCard img = {NicJ} name = {'Nicolas Jackson'} getGitLink={gitHubLinks.NicC} getLinkedLink ={linkedinLinks.NicC}/>
         </div>
       </section>
-
     </div>
+    <div style = {{marginBottom: '100px'}}></div>
     </div>
   )
 }
