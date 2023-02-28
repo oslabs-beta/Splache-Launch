@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
-
 export default function Sandbox(){
+    console.log(process.env.demo_ip)
     const sampleQuery: string = 
     `
      {
@@ -20,9 +20,9 @@ export default function Sandbox(){
       const [queryResponse, setQueryResponse] = useState('');
       const [start, setStart] = useState(0);
       const [time, setTimer] = useState(0);
-
+      const demo_ip = process.env.demo_ip
       const wholeCache = (queryString: string) => {
-         fetch('http://localhost:4001/graphql', {
+         fetch(`http://localhost:4002/graphql/cacheWhole`, {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'
@@ -36,7 +36,7 @@ export default function Sandbox(){
       }
 
       const resolverCache = (queryString: string) => {
-        fetch('http://localhost:4002/graphql', {
+        fetch('http://localhost:4002/graphql/resolver', {
           method: 'POST',
           headers: {
               'Content-Type' : 'application/json'
@@ -50,7 +50,7 @@ export default function Sandbox(){
       }
 
       const splacheCache = (queryString: string) => {
-        fetch('http://localhost:4003/graphql', {
+        fetch('http://localhost:4002/graphql/SplacheCache', {
           method: 'POST',
           headers: {
               'Content-Type' : 'application/json'
