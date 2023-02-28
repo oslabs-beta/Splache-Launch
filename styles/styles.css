@@ -433,6 +433,14 @@ p{
     margin: 8px;
 }
 
+.clearButton {
+    border: rgb(81, 136, 170) 1px solid;
+    cursor: pointer;
+    color: rgb(81, 136, 170);
+    background-color: white;
+    border-radius: 5px;
+}
+
 #textarea{
     width: 20vw;
     height: 25vh;

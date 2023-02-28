@@ -136,7 +136,18 @@ export default function Sandbox(){
             <div>Timer: {time > 0 ? <p>{time - start} ms </p> : <p>Loading .... </p> }</div>
 
             <div id ='queryRes'>Response:<p>{responseFormatter(queryResponse)}</p></div>
-        </div>
+
+            <button className='clearButton' onClick = {() => {
+                // Once the button clicked, it talk to redis to run command FLUSHALL
+                fetch('http://localhost:4002/clearcache', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type' : 'application/json'
+               },
+              body: JSON.stringify({command: 'FLUSHALL'})
+              })
+            }} >Clear the Cache</button>
+          </div>
 
         </div>
         </section>
