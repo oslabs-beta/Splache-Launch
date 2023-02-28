@@ -24,7 +24,8 @@ export default function Sandbox(){
       const [time, setTimer] = useState(0);
       const [button1CSS, setbutton1CSS] = useState('sandBoxButton');
       const [button2CSS, setbutton2CSS] = useState('sandBoxButton');
-      const [button3CSS, setbutton3CSS] = useState('sandBoxButton')
+      const [button3CSS, setbutton3CSS] = useState('sandBoxButton');
+      const [cacheState, clearCache] = useState('')
 
       const wholeCache = (queryString: string) => {
          fetch('http://localhost:4002/graphql/cacheWhole', {
@@ -139,14 +140,18 @@ export default function Sandbox(){
 
             <button className='clearButton' onClick = {() => {
                 // Once the button clicked, it talk to redis to run command FLUSHALL
-                fetch('http://localhost:4002/clearcache', {
+                fetch('http://localhost:4002/clearCache', {
                   method: 'POST',
                   headers: {
                     'Content-Type' : 'application/json'
                },
-              body: JSON.stringify({command: 'FLUSHALL'})
+              body: JSON.stringify({redisCommand: 'FLUSHALL'})
               })
+              .then((response) => response.json())
+              .then((message) => clearCache(message))
             }} >Clear the Cache</button>
+            {/* cacheState should be either '' or 'OK' */}
+            <div>{cacheState}</div>
           </div>
 
         </div>
