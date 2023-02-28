@@ -20,10 +20,12 @@ export default function Homepage () {
         <h1 id = 'logo'> <Image src = {logomark} alt = 'logomark' id = 'logomark'/><em>Splache</em></h1>
         <p> An Agile, Nimble, & Lightweight Solution to GraphQL Caching</p>
         <div id='clipboard'>
-        <p> npm install splache <button className = 'clipboardButton' 
+        <p> npm install splache 
+            <button className = 'clipboardButton' 
         onClick = {() => {copyToClipBoard()}}>{
             toggled? < FaClipboardCheck style ={clipboardStyle}/> : <FaRegClipboard style = {clipboardStyle}/>}
-            </button></p>
+            </button>
+        </p>
         </div>
         <div style = {toggled ? {display: 'block'} : {display: 'none'}}> <p> Successfully copied to clipboard! </p></div>
         </section>
