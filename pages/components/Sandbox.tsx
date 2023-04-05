@@ -26,8 +26,8 @@ export default function Sandbox(){
       const [button2CSS, setbutton2CSS] = useState('sandBoxButton');
       const [button3CSS, setbutton3CSS] = useState('sandBoxButton')
 
-      const wholeCache = (queryString: string) => {
-         fetch('http://localhost:4002/graphql/cacheWhole', {
+      async function wholeCache (queryString: string) {
+         await fetch('http://localhost:4002/graphql/cacheWhole', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'
@@ -39,8 +39,8 @@ export default function Sandbox(){
         setQueryResponse(JSON.stringify(result.data.person))})
       }
 
-      const resolverCache = (queryString: string) => {
-        fetch('http://localhost:4002/graphql/resolver', {
+      async function resolverCache (queryString: string) {
+        await fetch('http://localhost:4002/graphql/resolver', {
           method: 'POST',
           headers: {
               'Content-Type' : 'application/json'
@@ -50,11 +50,12 @@ export default function Sandbox(){
       .then((res) => res.json())
       .then((result) => {
       setTimer(Date.now());
+      console.log('result in frontend, resolver cache', result)
       setQueryResponse(JSON.stringify(result.data.person))})
       }
 
-      const splacheCache = (queryString: string) => {
-        fetch('http://localhost:4002/graphql/SplacheCache', {
+      async function splacheCache (queryString: string) {
+        await fetch('http://localhost:4002/graphql/splacheCache', {
           method: 'POST',
           headers: {
               'Content-Type' : 'application/json'
@@ -81,7 +82,7 @@ export default function Sandbox(){
 
       return(
         <section  className = 'pageSection' id = 'sandboxStart'>
-        <h1 > Sandbox: <em>Demo our library pre-installation</em></h1>
+        <h1> Sandbox: <em>Demo our library pre-installation</em></h1>
 
         <nav id = 'sandboxNav'>
 

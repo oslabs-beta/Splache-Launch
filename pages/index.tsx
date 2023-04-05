@@ -34,10 +34,10 @@ import DropDown from './components/DropDown'
     NicJ: 'https://github.com/NicJax'
   }
   const linkedinLinks = {
-    Jess : 'https://github.com/jesswang-dev',
+    Jess : 'https://www.linkedin.com/in/jessica-xuecen-wang',
     NicC : 'He\'s mysterious',
     Nancy : 'https://www.linkedin.com/in/zhangn356',
-    NicJ: 'www.linkedin.com/in/NicJax' 
+    NicJ: 'http://www.linkedin.com/in/NicJax' 
   }
   return (
     <div>
@@ -55,10 +55,10 @@ import DropDown from './components/DropDown'
       <section className = 'pageSection'>
         <h1 style = {{color: '#95b8d1'}}> Meet the team</h1>
         <div id = 'teamContainer'> 
-        <FlipCard  img={Jess} name={'Jessica Wang'} getGitLink={gitHubLinks.Jess} getLinkedLink ={linkedinLinks.Jess}/>
-        <FlipCard  img={Nancy} name={'Nancy Zhang'} getGitLink={gitHubLinks.Nancy} getLinkedLink ={linkedinLinks.Nancy}/>
-        <FlipCard  img={NicC} name={'Nicholas Cathcart'} getGitLink={gitHubLinks.NicC} getLinkedLink ={linkedinLinks.NicC}/>
-         <FlipCard img = {NicJ} name = {'Nicolas Jackson'} getGitLink={gitHubLinks.NicC} getLinkedLink ={linkedinLinks.NicC}/>
+        <FlipCard img= {Jess} name={'Jessica Wang'} getGitLink={gitHubLinks.Jess} getLinkedLink ={linkedinLinks.Jess}/>
+        <FlipCard img= {Nancy} name={'Nancy Zhang'} getGitLink={gitHubLinks.Nancy} getLinkedLink ={linkedinLinks.Nancy}/>
+        <FlipCard img= {NicC} name={'Nicholas Cathcart'} getGitLink={gitHubLinks.NicC} getLinkedLink ={linkedinLinks.NicC}/>
+        <FlipCard img = {NicJ} name = {'Nicolas Jackson'} getGitLink={gitHubLinks.NicJ} getLinkedLink ={linkedinLinks.NicJ}/>
         </div>
       </section>
     </div>
